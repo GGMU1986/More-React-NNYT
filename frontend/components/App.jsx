@@ -12,12 +12,21 @@ class App extends React.Component {
     ]
   }
 
+  addNinja = ninja => {
+    ninja.id = Math.ceil(Math.random() * 10) + 3
+    let newNinjas = [...this.state.ninjas, ninja];
+    this.setState({
+      ninjas: newNinjas
+    })
+  }
+
     render() {
       return (
         <div className="App">
             <h1>Welcome!</h1>
             <Ninjas ninjas={this.state.ninjas}/> 
-            <NinjaForm />
+            <br />
+            <NinjaForm addNinja={this.addNinja}/>
         </div>
       )
     }
