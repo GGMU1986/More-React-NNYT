@@ -1,9 +1,10 @@
 import React from "react";
 // import Ninjas from "./Ninjas";
 // import NinjaForm from './NinjaForm';
+import Todos from './todos/todos';
 
 class App extends React.Component {
-
+  
   // state = {
   //   ninjas: [
   //     { name: 'Ryu', age: 30, belt: 'Black', id: 1 },
@@ -26,11 +27,24 @@ class App extends React.Component {
   //     ninjas: newNinjas
   //   })
   // };
+  state = {
+    todos: [
+      { id: 1, content: "Buy some milk", done: false},
+      { id: 2, content: "Clean the house", done: false},
+      { id: 3, content: "Cooke delicious dinner", done: false}
+    ]
+  }
+
+  deleteTodo = id => {
+    const todos = this.state.todos.filter(el => el.id !== id)
+    this.setState({ todos })
+  };
 
     render() {
       return (
         <div>
-          Hello
+          <h1>Todos</h1>
+          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
         </div>
       //   <div className="App">
       //       <h1>Welcome!</h1>
