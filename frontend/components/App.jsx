@@ -1,5 +1,6 @@
 import React from "react";
 import Ninjas from "./Ninjas";
+import NinjaForm from './NinjaForm';
 
 class App extends React.Component {
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <div className="App">
             <h1>Welcome!</h1>
             <Ninjas ninjas={this.state.ninjas}/> 
+            <NinjaForm />
         </div>
       )
     }

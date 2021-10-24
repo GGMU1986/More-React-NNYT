@@ -13,30 +13,32 @@ class NinjaForm extends Component {
       });
     };
 
+    handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(this.state)
+    }
+
     render() {
       return (
         <div>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>Name:
                 <input type="text" onChange={this.handleChange('name')} />
             </label>
-
-            <br /><br />
 
             <label>Age:
                 <input type="text" onChange={this.handleChange('age')} />
             </label>
 
-            <br /><br />
-
             <label>Belt:
                 <input type="text" onChange={this.handleChange('belt')} />
             </label>
-            <br />
-            
+
             <button>Submit</button>
           </form>
         </div>
       )
     }
 }
+
+export default NinjaForm;
