@@ -4,6 +4,6 @@ import App from './components/App'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root')
-    ReactDOM.render(<App />, root)
+  const root = document.getElementById('root')
+  ReactDOM.render(<App />, root)
 })
